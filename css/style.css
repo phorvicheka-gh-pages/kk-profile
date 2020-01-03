@@ -1,0 +1,247 @@
+/* Custom Stylesheet */
+img[alt="www.000webhost.com"] {
+display: none;
+}
+
+
+a img {
+    padding: 2px;
+    margin: 10px 20px 10px 0;
+    vertical-align: top;
+    height: 100px;
+}
+
+a img.last {
+    margin-right: 0;
+}
+
+.exp-photo-container {
+    padding: 0 10px;
+}
+
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.collapsible-body p {
+    margin: 0;
+    padding: 1rem;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+nav ul a,
+nav .brand-logo {
+    color: rgb(77, 77, 77);
+    filter: grayscale(100%);
+    font-weight: bold;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+h4.header {
+    font-family: cursive;
+    font-style: italic;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5rem;
+}
+
+.side-nav li {
+    border-top: 1px solid orange;
+}
+
+.scrollToTop {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    display: none;
+}
+
+.button-collapse {
+    color: #26a69a;
+}
+
+.parallax-container {
+    min-height: 450px;
+    line-height: 0;
+    height: auto;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.parallax-container .section {
+    width: 100%;
+}
+
+.collapsible-header {
+    position: relative;
+    min-height: 10rem;
+    line-height: 4rem;
+    background-color: transparent;
+}
+
+.collapsible {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.label-date {
+    position: absolute;
+    bottom: 0;
+}
+
+.card-content {
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.collection .collection-item.avatar .circle {
+    -webkit-filter: drop-shadow(5px 5px 5px gray) invert(90%);
+    filter: drop-shadow(5px 5px 5px gray) invert(90%);
+}
+
+.section-title {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: none;
+    z-index: auto;
+    width: auto;
+    height: auto;
+    position: static;
+    cursor: default;
+    margin: 0;
+    padding: 10px;
+    overflow: visible;
+    border: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    font: normal 48px/normal "Warnes", Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 1);
+    text-decoration: normal;
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    white-space: pre;
+    background: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1), 0 0 40px #00ffff, 0 0 70px #00ffff, 0 0 80px #00ffff, 0 0 100px #00ffff;
+    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -webkit-transform: none;
+    transform: none;
+    -webkit-transform-origin: 50% 50% 0;
+    transform-origin: 50% 50% 0;
+}
+
+/* iPhone5 */
+
+@media only screen and (min-width: 320px) {
+    .parallax-container {
+        min-height: 750px;
+    }
+
+    .card-title {
+        width: 160px;
+    }
+
+    .card-title h5,
+    .card-title1 h5 {
+        font-size: 18px;
+    }
+
+    .card-title1 {
+        width: 140px;
+    }
+}
+
+/* Galaxy S5 */
+
+@media only screen and (min-width: 360px) {
+    .parallax-container {
+        min-height: 670px;
+    }
+
+    .section-title {
+        font: normal 28px/normal "Warnes", Helvetica, sans-serif;
+    }
+}
+
+.kk-card-image {
+    border-radius: 50% !important;
+    padding: 10px;
+}
+
+/* iPhone6 */
+
+@media only screen and (min-width: 375px) {
+    .parallax-container {
+        min-height: 650px;
+    }
+}
+
+/* Nexus 5x, Nexus 6P, iPhone6 Plus */
+
+@media only screen and (min-width: 412px) {
+    .parallax-container {
+        min-height: 620px;
+    }
+}
+
+/* iPad */
+
+@media only screen and (min-width: 768px) {
+    .parallax-container {
+        min-height: 450px;
+    }
+
+    .section-title {
+        font: normal 43px/normal "Warnes", Helvetica, sans-serif;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .parallax-container {
+        min-height: 400px;
+    }
+
+    .parallax-container .section {
+        width: 100%;
+    }
+
+    .card-title {
+        width: 230px;
+    }
+
+    .card-title h5,
+    .card-title1 h5 {
+        font-size: 20px;
+    }
+
+    .card-title1 {
+        width: 210px;
+    }
+}
+
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+footer.page-footer {
+    margin: 0;
+}
