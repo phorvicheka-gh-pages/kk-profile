@@ -1,4 +1,21 @@
 /* Custom Stylesheet */
+nav.dark {
+    background-color: #000; /* Dark background color */
+    color: #fff; /* Text color */
+}
+
+nav.dark .brand-logo img {
+    filter: invert(1); /* Invert logo colors for dark mode */
+}
+
+nav.dark ul li a {
+    color: #fff; /* Link text color */
+}
+
+nav.dark .button-collapse i {
+    color: orange; /* Menu icon color */
+}
+
 img[alt="www.000webhost.com"] {
 display: none;
 }
