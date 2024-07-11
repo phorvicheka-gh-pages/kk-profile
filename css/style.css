@@ -1,4 +1,18 @@
 /* Custom Stylesheet */
+.content-group-greeting {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.content-group-about {
+    padding-bottom: 35px;
+}
+
+.blurred-img {
+    filter: blur(5px); /* Adjust the value to increase or decrease the blur */
+    -webkit-filter: blur(5px); /* For Safari */
+}
+
 nav.dark {
     background-color: #000; /* Dark background color */
     color: #fff; /* Text color */
