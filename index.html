@@ -22,6 +22,8 @@
     <!-- Add fancyBox main JS and CSS files -->
     <script type="text/javascript" src="./fancybox-2.1.7/source/jquery.fancybox.pack.js?v=2.1.5"></script>
     <link rel="stylesheet" type="text/css" href="./fancybox-2.1.7/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 
 
@@ -58,9 +60,15 @@
 <div class="parallax-container">
     <div class="section no-pad-bot no-pad-top">
         <div class="container">
-            <h3 class="header center white-text">Hello, I'm <span class="white-text"><b>Vicheka PHOR</b>.</span></h3>
+            <h3 class="header center white-text">
+                <span id="greeting"></span>
+                <!-- Hello, I'm <span class="white-text"><b>Vicheka PHOR</b>.</span> -->
+            </h3>
             <div class="row center">
-                <h4 class="header col s12 white-text">Software Engineering</h4>
+                <h4 class="header col s12 white-text">
+                    <!-- Software Engineering -->
+                    <span id="profession"></span>
+                </h4>
             </div>
             <h5>👩‍💻 ABOUT</h5>
             <p class="header col s12 white-text">
@@ -1055,6 +1063,25 @@
     $('.button-collapse').sideNav({
         closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
         draggable: true // Choose whether you can drag to open on touch screens
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var greetingTyped = new Typed('#greeting', {
+            strings: ["Hello 👋, I'm <span class='white-text'><b>Vicheka PHOR</b>.</span>"],
+            typeSpeed: 30,
+            // loop: false,
+            showCursor: false,
+            // smartBackspace: false
+        });
+
+        var professionTyped = new Typed('#profession', {
+            strings: ["Software Engineering"],
+            typeSpeed: 50,
+            // loop: false,
+            // startDelay: 2000,
+            showCursor: false,
+            // smartBackspace: false
+        });
     });
 </script>
 

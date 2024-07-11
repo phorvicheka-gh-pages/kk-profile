@@ -73,6 +73,12 @@ p {
     line-height: 1.5rem;
 }
 
+.side-nav {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(1.7px);
+    -webkit-backdrop-filter: blur(1.7px);
+}
+
 .side-nav li {
     border-top: 1px solid orange;
 }
