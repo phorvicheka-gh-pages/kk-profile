@@ -122,13 +122,21 @@ p {
 
 .collapsible-header {
     position: relative;
-    min-height: 10rem;
+    min-height: 12rem;
     line-height: 4rem;
     background-color: transparent;
+    border-bottom: 0;
+}
+
+.collapsible-body {
+    border-bottom: 0;
+    border-bottom-radius: 16px;
 }
 
 .collapsible {
     background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 16px;
+    border-bottom: 1px solid #ddd;
 }
 
 .label-date {
@@ -138,6 +146,10 @@ p {
 
 .card-content {
     background-color: rgba(0, 0, 0, .7);
+}
+
+.collection {
+    border-radius: 16px;
 }
 
 .collection .collection-item.avatar .circle {
