@@ -4,6 +4,35 @@ body.pdfModal-open {
     overflow: hidden;
 }
 
+.white-text {
+    color: #EFEFEF; /* Softer white */
+}
+
+.email-container {
+    margin-bottom: 30px;
+}
+
+.email-btn {
+    background-color: #2F4A7A;
+    color: #FFFFFF !important;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.email-btn i {
+    font-size: 20px;
+}
+
+.email-btn:hover {
+    background-color: #24395D;
+    transform: translateY(-2px);
+    color: #FFFFFF !important;
+}
+
 /* Modal background */
 .pdfModal {
     display: none;
@@ -232,7 +261,8 @@ p {
     min-height: 450px;
     line-height: 0;
     height: auto;
-    color: rgba(255, 255, 255, 1);
+    /* color: rgba(255, 255, 255, 1); */
+    color: #EFEFEF;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
