@@ -24,15 +24,22 @@
     <link rel="stylesheet" type="text/css" href="./fancybox-2.1.7/source/jquery.fancybox.css?v=2.1.5" media="screen">
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 
 <body>
 
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <!-- <div class="spinner"></div> -->
+        <img src="./images/logo.svg" alt="Logo" class="logo" />
+    </div>
+
     <nav class="dark">
         <div class="nav-wrapper container">
             <a id="logo-container" href="index.html" class="brand-logo">
-                <img alt="logo" src="./images/logo.svg" style="padding: 5px; width:150px; height:50px"/>
+                <img alt="logo" src="./images/logo.svg" style="width:150px; height:50px; padding: 0; margin:0;"/>
             </a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="#technical_summary">🛠️ TECHNICAL SUMMARY</a></li>
@@ -71,9 +78,22 @@
                         </h4>
                     </div>
                 </div>
-                <div class="row center email-container">
+                <div class="email-container">
+                    <p class="center-align" style="min-width: 200px; margin: 0;">
+                        <a href="https://github.com/phorvicheka" style="margin: 0;" target="_blank">
+                            <img src="./images/github.svg" alt="GitHub"
+                                style="width:52px; height:52px; margin: 0; background-color: whitesmoke; border-radius: 50%;">
+                        </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="https://www.linkedin.com/in/vicheka-phor" style="margin: 0;" target="_blank">
+                            <img src="./images/linkedin.svg" alt="LinkedIn"
+                                style="width:52px; height:52px; margin: 0; background-color: whitesmoke; border-radius: 50%;">
+                        </a>
+                    </p>
                     <a href="mailto:phorvicheka@yahoo.com" class="btn-large email-btn">
                         <i class="material-icons left">email</i> Email Me
+                    </a>
+                    <a href="./docs/cv.pdf" class="btn-large cv-btn" download="cv_phor_vicheka.pdf">
+                        <i class="material-icons left">download</i> Download My CV
                     </a>
                 </div>
                 <div class="content-group-about">
@@ -108,101 +128,308 @@
         <div class="parallax"><img src="./images/bg1.jpg" alt="banner"></div>
     </div>
 
-
     <a id="technical_summary"></a>
-    <div class="parallax-container ">
+    <div class="parallax-container">
         <div class="section no-pad-bot no-pad-top">
             <div class="container">
                 <div class="section">
                     <div class="col s12 m7">
                         <h4 class="center white-text section-title">🛠️ TECHNICAL SUMMARY</h4>
-                        <!-- <div class="card horizontal" style="margin: 0; padding: 25px 25px 10px 25px; border-top-left-radius: 16px; border-top-right-radius: 16px;">
-                        <div class="card-title">
-                            <h5 style="margin: 0;">Operating Systems</h5>
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-content" style="padding: 0;">
-                                <p>Unix, Linux, Windows 7</p>
-                            </div>
-                        </div>
-                    </div> -->
-                        <div class="card horizontal"
-                            style="margin: 0; padding: 25px 25px 10px 25px; border-top-left-radius: 16px; border-top-right-radius: 16px;">
-                            <div class="card-title">
-                                <h5 style="margin: 0;">Languages</h5>
-                            </div>
-                            <div class="card-stacked">
-                                <div class="card-content" style="padding: 0;">
-                                    <p>Java Script, Kotlin, Java, Dart, Python, C#, C++, HTML5, CSS, PHP</p>
+                        <div class="cards-container">
+                            <!-- Languages Card -->
+                            <div class="category-card">
+                                <h2 class="category-title">
+                                    <i class="fas fa-code"></i>
+                                    Languages
+                                </h2>
+                                <div class="tech-grid">
+                                    <div class="tech-item">
+                                        <img src="images/logos/languages/javascript.svg" alt="JavaScript">
+                                        <span class="name">JavaScript</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/languages/dart.svg" alt="Dart">
+                                        <span class="name">Dart</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/languages/kotlin.svg" alt="Kotlin">
+                                        <span class="name">Kotlin</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/languages/python.svg" alt="Python">
+                                        <span class="name">Python</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/languages/java.svg" alt="Java">
+                                        <span class="name">Java</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/languages/html5.svg" alt="HTML5">
+                                        <span class="name">HTML5</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/languages/css3.svg" alt="CSS">
+                                        <span class="name">CSS</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/languages/csharp.svg" alt="C#">
+                                        <span class="name">C#</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/languages/php.svg" alt="PHP">
+                                        <span class="name">PHP</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card horizontal" style="margin: 0; padding: 10px 25px;">
-                            <div class="card-title">
-                                <h5 style="margin: 0;">Front-end</h5>
-                            </div>
-                            <div class="card-stacked">
-                                <div class="card-content" style="padding: 0;">
-                                    <p>
-                                        Android (Kotlin, Jetpack Compose), Flutter, React Native, Next.js (Kirimase,
-                                        Create T3 App, shadcn/ui, Tailwind CSS, react-spring), React.js, Electron,
-                                        Cypress.io, Servlet, Figma
-                                    </p>
+                        
+                            <!-- Front-end Card -->
+                            <div class="category-card">
+                                <h2 class="category-title">
+                                    <i class="fas fa-laptop-code"></i>
+                                    Front-end
+                                </h2>
+                                <div class="tech-grid">
+                                    <div class="tech-item">
+                                        <img src="images/logos/frontend/nextjs.svg" alt="Next.js">
+                                        <span class="name">Next.js</span>
+                                        <div class="tech-details">
+                                            <div class="detail-title">Next.js Stack</div>
+                                            <ul>
+                                                <li>Kirimase</li>
+                                                <li>Create T3 App</li>
+                                                <li>shadcn/ui</li>
+                                                <li>Tailwind CSS</li>
+                                                <li>react-spring</li>
+                                                <li>Zustand</li>
+                                                <li>Redux</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/frontend/flutter.svg" alt="Flutter">
+                                        <span class="name">Flutter</span>
+                                        <div class="tech-details">
+                                            <div class="detail-title">Flutter Stack</div>
+                                            <ul>
+                                                <li>State Management (Provider, Flutter Hooks)</li>
+                                                <li>Dependency Injection (GetIt)</li>
+                                                <li>Navigation (go_router v14+)</li>
+                                                <li>Forms (Form Builder, Validators)</li>
+                                                <li>API Integration (Dio, Freezed)</li>
+                                                <li>Local Storage (SQLite, SharedPrefs)</li>
+                                                <li>Firebase Services</li>
+                                                <li>Media Handling (Image Picker)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/frontend/android.svg" alt="Android">
+                                        <span class="name">Android</span>
+                                        <div class="tech-details">
+                                            <div class="detail-title">Android Development</div>
+                                            <ul>
+                                                <li>Kotlin</li>
+                                                <li>Jetpack Compose</li>
+                                                <li>Material Design 3</li>
+                                                <li>Android SDK</li>
+                                                <li>Android Studio</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/frontend/react.svg" alt="React">
+                                        <span class="name">React</span>
+                                    </div>
+                                    <!-- Tailwind CSS -->
+                                    <div class="tech-item">
+                                        <img src="images/logos/frontend/tailwindcss.svg" alt="Tailwind CSS">
+                                        <span class="name">Tailwind CSS</span>
+
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/frontend/figma.svg" alt="Figma">
+                                        <span class="name">Figma</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/frontend/electron.svg" alt="Electron">
+                                        <span class="name">Electron</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/frontend/svelte.svg" alt="Svelte">
+                                        <span class="name">Svelte</span>
+                                        <!-- <div class="tech-details">
+                                            <div class="detail-title">Svelte Stack</div>
+                                            <ul>
+                                                <li>SvelteKit</li>
+                                                <li>Svelte Stores</li>
+                                                <li>Svelte Animations</li>
+                                                <li>TailwindCSS</li>
+                                                <li>TypeScript</li>
+                                                <li>Vite</li>
+                                            </ul>
+                                        </div> -->
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card horizontal" style="margin: 0; padding: 10px 25px;">
-                            <div class="card-title">
-                                <h5 style="margin: 0;">Back-end</h5>
-                            </div>
-                            <div class="card-stacked">
-                                <div class="card-content" style="padding: 0;">
-                                    <p>
-                                        FastApi, Express.js, Node.js, Nest.js, Spring boot, Laravel, PostgreSQL, MySQL
-                                    </p>
+                        
+                            <!-- Back-end Card -->
+                            <div class="category-card">
+                                <h2 class="category-title">
+                                    <i class="fas fa-server"></i>
+                                    Back-end
+                                </h2>
+                                <div class="tech-grid">
+                                    <div class="tech-item">
+                                        <img src="images/logos/backend/fastapi.svg" alt="FastAPI">
+                                        <span class="name">FastAPI</span>
+                                        <div class="tech-details">
+                                            <div class="detail-title">FastAPI Stack</div>
+                                            <ul>
+                                                <li>API Schema (Pydantic v2)</li>
+                                                <li>Async Support (Uvicorn)</li>
+                                                <li>Task Queue (Celery)</li>
+                                                <li>Scheduled Tasks (Celery Beat)</li>
+                                                <li>Queue Monitoring (Flower)</li>
+                                                <li>SQLAlchemy ORM</li>
+                                                <li>Alembic Migrations</li>
+                                                <li>JWT Authentication</li>
+                                                <li>OpenAPI/Swagger Docs</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/backend/supabase.svg" alt="Supabase">
+                                        <span class="name">Supabase</span>
+                                        <div class="tech-details">
+                                            <div class="detail-title">Supabase Stack</div>
+                                            <ul>
+                                                <li>PostgreSQL Database</li>
+                                                <li>Authentication</li>
+                                                <li>Real-time Subscriptions</li>
+                                                <li>Row Level Security</li>
+                                                <li>Database Backups</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/backend/express.svg" alt="Express.js">
+                                        <span class="name">Express.js</span>
+                                        <div class="tech-details">
+                                            <div class="detail-title">Express.js Stack</div>
+                                            <ul>
+                                                <li>Routing System</li>
+                                                <li>Middleware Chain</li>
+                                                <li>Request/Response</li>
+                                                <li>Error Handling</li>
+                                                <li>Static Files</li>
+                                                <li>Database Integration</li>
+                                                <li>Security (Helmet)</li>
+                                                <li>CORS & Validation</li>
+                                                <li>REST API Design</li>
+                                                <li>JSON Server (Mock API)</li>
+                                                <li>Custom Middleware</li>
+                                                <li>API Documentation</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="tech-item">
+                                        <img src="images/logos/backend/nodejs.svg" alt="Node.js">
+                                        <span class="name">Node.js</span>
+                                    </div> -->
+                                    <div class="tech-item">
+                                        <img src="images/logos/backend/springboot.svg" alt="Spring Boot">
+                                        <span class="name">Spring Boot</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/backend/laravel.svg" alt="Laravel">
+                                        <span class="name">Laravel</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/backend/postgresql.svg" alt="PostgreSQL">
+                                        <span class="name">PostgreSQL</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/backend/mysql.svg" alt="MySQL">
+                                        <span class="name">MySQL</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card horizontal" style="margin: 0; padding: 10px 25px;">
-                            <div class="card-title">
-                                <h5 style="margin: 0;">Collaboration</h5>
-                            </div>
-                            <div class="card-stacked">
-                                <div class="card-content" style="padding: 0;">
-                                    <p>Git, GitHub, Bitbucket, Jira, GitLab</p>
+                        
+                            <!-- Collaboration Card -->
+                            <div class="category-card">
+                                <h2 class="category-title">
+                                    <i class="fas fa-code-branch"></i>
+                                    Collaboration
+                                </h2>
+                                <div class="tech-grid">
+                                    <div class="tech-item">
+                                        <img src="images/logos/collaboration/git.svg" alt="Git">
+                                        <span class="name">Git</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/collaboration/github.svg" alt="GitHub">
+                                        <span class="name">GitHub</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/collaboration/gitlab.svg" alt="GitLab">
+                                        <span class="name">GitLab</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/collaboration/jira.svg" alt="Jira">
+                                        <span class="name">Jira</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/collaboration/bitbucket.svg" alt="Bitbucket">
+                                        <span class="name">Bitbucket</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/collaboration/confluence.svg" alt="Confluence">
+                                        <span class="name">Confluence</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card horizontal" style="margin: 0; padding: 10px 25px;">
-                            <div class="card-title">
-                                <h5 style="margin: 0;">DevOps</h5>
-                            </div>
-                            <div class="card-stacked">
-                                <div class="card-content" style="padding: 0;">
-                                    <p>Docker, Docker Compose</p>
+                        
+                            <!-- DevOps Card -->
+                            <div class="category-card">
+                                <h2 class="category-title">
+                                    <i class="fas fa-cogs"></i>
+                                    DevOps
+                                </h2>
+                                <div class="tech-grid">
+                                    <div class="tech-item">
+                                        <img src="images/logos/devops/docker.svg" alt="Docker">
+                                        <span class="name">Docker</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/devops/dockercompose.svg" alt="Docker Compose">
+                                        <span class="name">Docker Compose</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- <div class="card horizontal" style="margin: 0; padding: 10px 25px;">
-                        <div class="card-title">
-                            <h5 style="margin: 0;">Hardware</h5>
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-content" style="padding: 0;">
-                                <p>FPGA, RISC microprocessor, LatticeECP3 Video Protocol boards, Drone (Rolling Spider
-                                    and Jumping Sumo)</p>
-                            </div>
-                        </div>
-                    </div> -->
-                        <div class="card horizontal"
-                            style="margin: 0; padding: 10px 25px 25px 25px; border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
-                            <div class="card-title">
-                                <h5 style="margin: 0;">AI/ML</h5>
-                            </div>
-                            <div class="card-stacked">
-                                <div class="card-content" style="padding: 0;">
-                                    <p>LLM (Olama, Llama3, ChatGPT, Gemini), BERTopic, Tensorflow Hub Object Detection
-                                    </p>
+                        
+                            <!-- AI/ML Card -->
+                            <div class="category-card">
+                                <h2 class="category-title">
+                                    <i class="fas fa-brain"></i>
+                                    AI/ML
+                                </h2>
+                                <div class="tech-grid">
+                                    <div class="tech-item">
+                                        <img src="images/logos/aiml/claudeai.svg" alt="Claude AI">
+                                        <span class="name">Claude AI</span>
+                                    </div>
+                                    <!-- <div class="tech-item">
+                                        <img src="images/logos/aiml/openai.svg" alt="Ollama">
+                                        <span class="name">Ollama</span>
+                                    </div> -->
+                                    <div class="tech-item">
+                                        <img src="images/logos/aiml/openai.svg" alt="ChatGPT">
+                                        <span class="name">ChatGPT</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <img src="images/logos/aiml/tensorflow.svg" alt="Tensorflow">
+                                        <span class="name">Tensorflow</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -211,6 +438,8 @@
             </div>
         </div>
         <div class="parallax"><img src="./images/bg2.jpg" alt="background img 3"></div>
+    </div>
+    <div class="tooltip-container">
     </div>
 
 
@@ -1405,12 +1634,10 @@
                     <div class="card-action center-align">
                         <p>
                             <!-- <a href="/docs/cover-letter.pdf">cover-letter.pdf</a> &nbsp;&nbsp;&ndash;&nbsp;&nbsp; -->
-                            <a class="pdf-link" href="./docs/cv.pdf" style="text-transform: lowercase; margin: 0;"
-                                target="_blank">
+                            <a class="pdf-link" href="./docs/cv.pdf" style="text-transform: lowercase; margin: 0;" download="cv_phor_vicheka.pdf">
                                 cv.pdf
                             </a>&nbsp;&nbsp;&nbsp;&nbsp;&ndash;&nbsp;&nbsp;&nbsp;
-                            <a class="pdf-link" href="./docs/cv.docx" style="text-transform: lowercase; margin: 0;"
-                                target="_blank">
+                            <a href="./docs/cv.docx" style="text-transform: lowercase; margin: 0;" download="cv_phor_vicheka.docx">
                                 cv.docx
                             </a>
                         </p>
@@ -1448,6 +1675,16 @@
     </div>
 
     <script>
+        window.addEventListener('load', function () {
+            // Hide the loading screen when everything is loaded
+            const loadingScreen = document.getElementById('loading-screen');
+            const content = document.getElementById('main-content');
+
+            // Hide the loading screen and show the content
+            loadingScreen.style.display = 'none';
+            content.classList.remove('hidden');
+        });
+
         $(document).ready(function () {
             //Check to see if the window is top if not then display button
             $(window).scroll(function () {
@@ -1487,6 +1724,34 @@
                 // startDelay: 2000,
                 showCursor: false,
                 // smartBackspace: false
+            });
+
+            const tooltipContainer = document.querySelector('.tooltip-container');
+            const techItems = document.querySelectorAll('.tech-item');
+            
+            techItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    const rect = item.getBoundingClientRect();
+                    const tooltip = item.querySelector('.tech-details');
+                    
+                    if (tooltip) {
+                        // Clone the tooltip
+                        const clonedTooltip = tooltip.cloneNode(true);
+                        
+                        // Position the cloned tooltip
+                        clonedTooltip.style.top = `${rect.top}px`;
+                        clonedTooltip.style.left = `${rect.left + (rect.width / 2)}px`;
+                        clonedTooltip.style.transform = 'translate(-50%, -105%)';
+                        
+                        // Clear container and add new tooltip
+                        tooltipContainer.innerHTML = '';
+                        tooltipContainer.appendChild(clonedTooltip);
+                    }
+                });
+                
+                item.addEventListener('mouseleave', () => {
+                    tooltipContainer.innerHTML = '';
+                });
             });
         });
 

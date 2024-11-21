@@ -1,22 +1,337 @@
 /* Custom Stylesheet */
+/* Loading Screen Styles */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's on top */
+}
+
+/* Logo Animation Styles */
+.logo {
+    width: 120px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    animation: pulse 2s ease-in-out infinite; /* Pulse animation */
+}
+
+/* Pulse Animation (scales up and down) */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1; /* Fully visible */
+        transform: scale(1); /* Normal size */
+    }
+    50% {
+        opacity: 0.8; /* Slightly faded */
+        transform: scale(1.5); /* Slightly scaled up */
+    }
+}
+
+/* Spinner Styles */
+.spinner {
+    border: 8px solid #f3f3f3; /* Light gray */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hide Content Initially */
+.hidden {
+    display: none;
+}
+
+/* Show content once loading is done */
+.show {
+    display: block;
+}
+
+
+
 /* Prevent background scrolling when modal is open */
 body.pdfModal-open {
     overflow: hidden;
 }
+
+/* START: Technical Summary with Horizontal Category Cards */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.category-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+/* .category-card:hover {
+    transform: translateY(-5px);
+} */
+
+.category-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    color: #64ffda;
+    border-bottom: 2px solid #64ffda;
+    padding-bottom: 0.5rem;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 1rem;
+}
+
+/* Existing tech item styles */
+.tech-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    min-height: 80px;
+    transition: all 0.2s ease;
+}
+
+/* Tooltip container styles */
+.tooltip-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Hide original tech-details */
+.tech-item .tech-details {
+    display: none;
+}
+
+/* Tooltip styles when shown in container */
+/* .tech-details {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(4px);
+    padding: 1rem;
+    border-radius: 8px;
+    width: 250px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+} */
+
+/* Tooltip styles when shown in container */
+.tooltip-container .tech-details {
+    position: fixed;
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(8px);
+    padding: 1.25rem;
+    border-radius: 8px;
+    width: 280px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    pointer-events: auto;
+}
+
+/* Arrow for tooltip - adjusted position */
+.tech-details::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.95) transparent transparent transparent;
+}
+
+/* Show tooltip on hover with improved animation */
+.tech-item:hover .tech-details {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Tooltip title with improved spacing */
+.tech-details .detail-title {
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+/* Improved list styling */
+.tech-details ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-details ul li {
+    margin: 0.5rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.4;
+}
+
+.tech-details ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #64ffda;
+}
+
+/* Handle tooltip position at screen edges */
+.tech-item:hover .tech-details {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+/* Ensure tooltip doesn't get cut off at screen edges */
+@media (max-width: 768px) {
+    .tech-details {
+        width: 180px;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+    }
+    
+    .tech-item:first-child .tech-details {
+        left: 0;
+        transform: translateY(10px);
+    }
+    
+    .tech-item:first-child:hover .tech-details {
+        transform: translateY(0);
+    }
+    
+    .tech-item:last-child .tech-details {
+        left: auto;
+        right: 0;
+        transform: translateY(10px);
+    }
+    
+    .tech-item:last-child:hover .tech-details {
+        transform: translateY(0);
+    }
+}
+
+/* Base styles for all SVG images */
+.tech-item img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    filter: contrast(1.1) 
+            brightness(1.1) 
+            saturate(1.2) 
+            drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for all images */
+.tech-item:hover img {
+    transform: scale(1.2);
+    filter: contrast(1.2) 
+            brightness(1.2) 
+            saturate(1.3) 
+            drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* Name text styles */
+.tech-item .name {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #fff;
+    line-height: 1.2;
+    /* Handle long text */
+    word-break: break-word;
+    hyphens: auto;
+    /* Ensure text doesn't overflow */
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    }
+}
+
+/* END: Technical Summary with Horizontal Category Cards */
 
 .white-text {
     color: #EFEFEF; /* Softer white */
 }
 
 .email-container {
-    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-top: 0px;
+    margin-bottom: 40px;
 }
 
 .email-btn {
-    background-color: #2F4A7A;
-    color: #FFFFFF !important;
+    min-width: 200px;
+    background-color: rgba(47, 74, 122, 0.8);
+    color: #F0F4FA !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 25px;
-    font-size: 18px;
+    font-size: clamp(14px, 3vw, 18px);
     font-weight: 600;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     text-transform: uppercase;
@@ -28,10 +343,34 @@ body.pdfModal-open {
 }
 
 .email-btn:hover {
-    background-color: #24395D;
+    background-color: rgba(30, 47, 82, 0.95);
     transform: translateY(-2px);
-    color: #FFFFFF !important;
+    color: rgba(224, 230, 239, 1) !important;
 }
+
+.cv-btn {
+    min-width: 230px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #F0F4FA !important;
+    border-radius: 25px;
+    font-size: clamp(14px, 3vw, 18px);
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.cv-btn i {
+    font-size: 20px;
+}
+
+.cv-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #2F4A7A !important;
+    transform: translateY(-2px);
+}
+
 
 /* Modal background */
 .pdfModal {
