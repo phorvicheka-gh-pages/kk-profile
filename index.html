@@ -750,7 +750,7 @@
                                                 </em>
                                             </p>
                                             <p class="label-date">
-                                                June 2024 – December 2024
+                                                June 2024 – December 2024 – (22 hours)
                                             </p>
                                         </div>
                                     </div>
@@ -817,7 +817,7 @@
                                                 </em>
                                             </p>
                                             <p class="label-date">
-                                                October 2023 – December 2023
+                                                October 2023 – December 2023 – (12 hours)
                                             </p>
                                         </div>
                                     </div>
@@ -865,7 +865,7 @@
                                                 <em>Yonsei University, South Korea</em>
                                             </p>
                                             <p class="label-date">
-                                                October 2020 - February 2023
+                                                September 2020 - February 2023
                                             </p>
                                         </div>
                                     </div>
@@ -984,8 +984,7 @@
                                             <br>
                                             <em>Tessi Documents Services, Paris Area, France</em>
                                         </p>
-                                        <p class="label-date">December 2018 – February 2019 (3 months of training
-                                            mission) </p>
+                                        <p class="label-date">December 2018 – February 2019</p>
                                     </div>
                                     <div class="collapsible-body">
                                         <p>
@@ -1270,9 +1269,7 @@
                                             <br>
                                             <em>EnergyLab Asia, Cambodia</em>
                                         </p>
-                                        <p class="label-date">3 days (20<sup>th</sup>, 27<sup>th</sup> and
-                                            28<sup>th</sup>
-                                            October 2018)</p>
+                                        <p class="label-date">20<sup>th</sup>, 27<sup>th</sup> and 28<sup>th</sup> October 2018 · (3 days)</p>
                                     </div>
                                     <div class="collapsible-body">
                                         <p>
@@ -1682,7 +1679,6 @@
 
             // Hide the loading screen and show the content
             loadingScreen.style.display = 'none';
-            content.classList.remove('hidden');
         });
 
         $(document).ready(function () {
@@ -1726,6 +1722,107 @@
                 // smartBackspace: false
             });
 
+            // <!-- ---------------------- Calculation the duration ----------------------- -->
+            const labelDates = document.querySelectorAll(".label-date");
+
+            labelDates.forEach(label => {
+                const text = label.textContent?.trim();
+
+                // Skip empty or invalid text
+                if (!text || !text.includes("–") && !text.includes("-")) {
+                    // console.error(`Invalid or missing date range: "${text}"`);
+                    return;
+                }
+
+                if (!text.includes("·")) {
+                    const durationText = getDurationText(text);
+                    if (durationText) {
+                        label.textContent += ` · (${durationText})`;
+                    }
+                }
+            });
+
+            /**
+             * Parses the date range and calculates the duration.
+             * @param {string} dateRange - The date range string (e.g., "March 2023 – Present").
+             * @returns {string|null} - The formatted duration string (e.g., "1 yrs 9 mos") or null if invalid.
+             */
+            function getDurationText(dateRange) {
+                const [start, end] = dateRange.split(/[–-]/).map(part => part.trim());
+                const startDate = parseDate(start);
+                const endDate = end === "Present" ? new Date() : parseDate(end);
+
+                // Debugging invalid date parsing
+                if (!startDate || !endDate) {
+                    // console.error(`Invalid date parsing for range: ${dateRange}`);
+                    return null;
+                }
+
+                const { years, months } = calculateDuration(startDate, endDate);
+
+                // Debugging calculated duration
+                if (years < 0 || months < 0) {
+                    // console.error(`Invalid duration for range: ${dateRange}`, { startDate, endDate });
+                    return null;
+                }
+
+                return formatDuration(years, months);
+            }
+
+            /**
+             * Converts a "Month Year" string into a Date object.
+             * @param {string} dateStr - The date string (e.g., "March 2023").
+             * @returns {Date|null} - The parsed Date object or null if invalid.
+             */
+            function parseDate(dateStr) {
+                const [month, year] = dateStr.split(" ");
+                const monthIndex = new Date(`${month} 1`).getMonth();
+                return isNaN(monthIndex) || isNaN(year) ? null : new Date(year, monthIndex, 1);
+            }
+
+            /**
+             * Calculates the duration between two dates in years and months.
+             * @param {Date} start - The start date.
+             * @param {Date} end - The end date.
+             * @returns {object} - An object with `years` and `months` properties.
+             */
+            function calculateDuration(start, end) {
+                let years = end.getFullYear() - start.getFullYear();
+                let months = end.getMonth() - start.getMonth();
+
+                // Adjust years and months if the end month is earlier than the start month
+                if (months < 0) {
+                    years -= 1;
+                    months += 12;
+                }
+
+                // Include the current month if end day >= start day
+                if (end.getDate() >= start.getDate()) {
+                    months += 1;
+                }
+
+                // Handle months overflow (e.g., 12 months -> 1 year)
+                if (months >= 12) {
+                    years += 1;
+                    months -= 12;
+                }
+
+                return { years, months };
+            }
+
+            /**
+             * Formats the duration as a string (e.g., "2 yrs 10 mos").
+             * @param {number} years - The number of years.
+             * @param {number} months - The number of months.
+             * @returns {string} - The formatted duration string.
+             */
+            function formatDuration(years, months) {
+                const yearText = years > 0 ? `${years} yr${years > 1 ? "s" : ""}` : "";
+                const monthText = months > 0 ? `${months} mo${months > 1 ? "s" : ""}` : "";
+                return [yearText, monthText].filter(Boolean).join(" ");
+            }
+
+            // <!-- ------------------------------- Tooltip ------------------------------- -->
             const tooltipContainer = document.querySelector('.tooltip-container');
             const techItems = document.querySelectorAll('.tech-item');
             
