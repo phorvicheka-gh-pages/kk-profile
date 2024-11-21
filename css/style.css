@@ -1,4 +1,8 @@
 /* Custom Stylesheet */
+.collapsible {
+    border: 1px solid rgba(221, 221, 221, 0.2) !important;
+}
+
 .parallax img {
     min-width: 102%;
 }
@@ -107,7 +111,7 @@ body.pdfModal-open {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2.5rem;
-    color: #fff;
+    color: rgba(239, 239, 239, 0.95);
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
@@ -344,7 +348,8 @@ body.pdfModal-open {
 /* END: Technical Summary with Horizontal Category Cards */
 
 .white-text {
-    color: #EFEFEF; /* Softer white */
+    /* color: #EFEFEF; */ /* Softer white */
+    color: rgba(239, 239, 239, 0.95) !important;
 }
 
 .email-container {
@@ -512,8 +517,8 @@ body.pdfModal-open {
 /* Divider styles */
 .divider {
     display: block;
-    height: 2px;
-    background-color: #ddd;
+    height: 1px;
+    background-color: rgba(239, 239, 239, 0.2);
     margin: 16px 0;
     width: 100%;
     max-width: 100%;
@@ -580,6 +585,7 @@ a img.last {
 .collapsible-body p {
     margin: 0;
     padding: 1rem;
+    color: rgba(239, 239, 239, 0.85);
 }
 
 body {
@@ -633,7 +639,8 @@ p {
     line-height: 0;
     height: auto;
     /* color: rgba(255, 255, 255, 1); */
-    color: #EFEFEF;
+    /* color: #EFEFEF; */
+    color: rgba(239, 239, 239, 0.95);
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -647,6 +654,10 @@ p {
     line-height: 4rem;
     background-color: transparent;
     border-bottom: 0;
+}
+
+.collapsible-header em {
+    color: rgba(239, 239, 239, 0.7);
 }
 
 .collapsible-body {
@@ -672,11 +683,27 @@ p {
 
 .collection {
     border-radius: 16px;
+    border: 1px solid rgba(221, 221, 221, 0.2) !important;
+}
+
+.collection .collection-item{
+    border-radius: 5px;
+    border: 1px solid rgba(221, 221, 221, 0.1) !important;
+}
+
+.collection .collection-header img{
+    -webkit-filter: drop-shadow(4px 4px 10px gray);
+    filter: drop-shadow(4px 4px 10px gray);
 }
 
 .collection .collection-item.avatar .circle {
     -webkit-filter: drop-shadow(5px 5px 5px gray) invert(90%);
     filter: drop-shadow(5px 5px 5px gray) invert(90%);
+}
+
+
+.collection .collection-item.avatar p{
+    color: rgba(239, 239, 239, 0.7);
 }
 
 .section-title {
