@@ -1,3 +1,23 @@
+const { OverlayScrollbars, ClickScrollPlugin } = OverlayScrollbarsGlobal;
+
+// optional: use the ClickScrollPlugin to make the option "scrollbars.clickScroll: true" available
+OverlayScrollbars.plugin(ClickScrollPlugin);
+
+OverlayScrollbars(document.body, {
+    scrollbars: {
+        clickScroll: true,
+        autoHide: 'scroll',
+        autoHideDelay: 1000,
+        dragScroll: true,
+    },
+    scroll: {
+        smooth: true,        // Enable smooth scrolling
+        smoothTime: 100,     // Duration of the smooth animation in ms
+        smoothDistribution: 0.5,  // Distribution of the scroll animation (0 to 1)
+    }
+});
+
+
 (function ($) {
     // Loading screen handler
     $(window).on('load', function () {
