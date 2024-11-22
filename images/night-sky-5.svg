@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="skyGradient" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#0c0c2f" />
+      <stop offset="50%" style="stop-color:#000033" />
+      <stop offset="100%" style="stop-color:#000020" />
+    </radialGradient>
+
+    <!-- Ultra bright star glow -->
+    <filter id="ultraGlow">
+      <feGaussianBlur stdDeviation="2" result="glow1" />
+      <feGaussianBlur stdDeviation="4" result="glow2" />
+      <feGaussianBlur stdDeviation="8" result="glow3" />
+      <feMerge>
+        <feMergeNode in="glow3" />
+        <feMergeNode in="glow2" />
+        <feMergeNode in="glow1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Bright head glow -->
+    <filter id="headGlow">
+      <feGaussianBlur stdDeviation="1" result="glow1" />
+      <feGaussianBlur stdDeviation="2" result="glow2" />
+      <feGaussianBlur stdDeviation="4" result="glow3" />
+      <feMerge>
+        <feMergeNode in="glow3" />
+        <feMergeNode in="glow2" />
+        <feMergeNode in="glow1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Corrected tail gradient - brightest near the head -->
+    <linearGradient id="tailGradient" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:white;stop-opacity:0.9" />
+      <stop offset="10%" style="stop-color:white;stop-opacity:0.7" />
+      <stop offset="30%" style="stop-color:white;stop-opacity:0.4" />
+      <stop offset="60%" style="stop-color:white;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:white;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#skyGradient)" />
+
+  <!-- [Previous background stars remain exactly the same] -->
+  <!-- Original and additional stars with glow -->
+  <g filter="url(#ultraGlow)">
+    <!-- Original tiny stars -->
+    <circle cx="50" cy="50" r="0.5" fill="#ffffff" />
+    <circle cx="120" cy="80" r="0.5" fill="#ffffff" />
+    <circle cx="200" cy="30" r="0.5" fill="#ffffff" />
+    <circle cx="280" cy="90" r="0.5" fill="#ffffff" />
+    <circle cx="350" cy="40" r="0.5" fill="#ffffff" />
+    <circle cx="420" cy="70" r="0.5" fill="#ffffff" />
+    <circle cx="500" cy="45" r="0.5" fill="#ffffff" />
+    <circle cx="580" cy="85" r="0.5" fill="#ffffff" />
+    <circle cx="650" cy="35" r="0.5" fill="#ffffff" />
+    <circle cx="720" cy="75" r="0.5" fill="#ffffff" />
+
+    <!-- Additional stars near top -->
+    <circle cx="75" cy="20" r="0.5" fill="#ffffff" />
+    <circle cx="150" cy="15" r="0.5" fill="#ffffff" />
+    <circle cx="225" cy="25" r="0.5" fill="#ffffff" />
+    <circle cx="300" cy="10" r="0.5" fill="#ffffff" />
+    <circle cx="375" cy="30" r="0.5" fill="#ffffff" />
+    <circle cx="450" cy="20" r="0.5" fill="#ffffff" />
+    <circle cx="525" cy="15" r="0.5" fill="#ffffff" />
+    <circle cx="600" cy="25" r="0.5" fill="#ffffff" />
+    <circle cx="675" cy="10" r="0.5" fill="#ffffff" />
+    <circle cx="750" cy="30" r="0.5" fill="#ffffff" />
+
+    <!-- Additional stars near bottom -->
+    <circle cx="75" cy="550" r="0.5" fill="#ffffff" />
+    <circle cx="150" cy="570" r="0.5" fill="#ffffff" />
+    <circle cx="225" cy="580" r="0.5" fill="#ffffff" />
+    <circle cx="300" cy="560" r="0.5" fill="#ffffff" />
+    <circle cx="375" cy="575" r="0.5" fill="#ffffff" />
+    <circle cx="450" cy="565" r="0.5" fill="#ffffff" />
+    <circle cx="525" cy="580" r="0.5" fill="#ffffff" />
+    <circle cx="600" cy="570" r="0.5" fill="#ffffff" />
+    <circle cx="675" cy="550" r="0.5" fill="#ffffff" />
+    <circle cx="750" cy="560" r="0.5" fill="#ffffff" />
+
+    <!-- Original medium stars -->
+    <circle cx="100" cy="150" r="1.5" fill="#ffffff" />
+    <circle cx="250" cy="200" r="1.8" fill="#ffffff" />
+    <circle cx="400" cy="150" r="1.6" fill="#ffffff" />
+    <circle cx="550" cy="250" r="1.7" fill="#ffffff" />
+    <circle cx="700" cy="180" r="1.5" fill="#ffffff" />
+    <circle cx="150" cy="400" r="1.6" fill="#ffffff" />
+    <circle cx="300" cy="350" r="1.8" fill="#ffffff" />
+    <circle cx="450" cy="450" r="1.5" fill="#ffffff" />
+    <circle cx="600" cy="380" r="1.7" fill="#ffffff" />
+    <circle cx="750" cy="420" r="1.6" fill="#ffffff" />
+
+    <!-- Original bright stars -->
+    <circle cx="150" cy="100" r="3" fill="#ffffff" />
+    <circle cx="650" cy="150" r="3.5" fill="#ffffff" />
+    <circle cx="400" cy="280" r="4" fill="#ffffff" />
+    <circle cx="200" cy="400" r="3.2" fill="#ffffff" />
+    <circle cx="700" cy="380" r="3.8" fill="#ffffff" />
+    <circle cx="300" cy="200" r="3.5" fill="#ffffff" />
+    <circle cx="550" cy="450" r="3.3" fill="#ffffff" />
+    <circle cx="480" cy="120" r="3.6" fill="#ffffff" />
+    <circle cx="120" cy="320" r="3.4" fill="#ffffff" />
+    <circle cx="750" cy="250" r="3.7" fill="#ffffff" />
+  </g>
+
+  <!-- Realistic shooting stars with corrected tail brightness -->
+  <!-- Shooting stars with more natural angle -->
+  <g>
+    <!-- Star 1 - Left side -->
+    <g>
+      <line stroke="url(#tailGradient)" stroke-width="2">
+        <animate attributeName="x1" values="50;250" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="-50;600" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="150;350" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="50;700" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="8s" repeatCount="indefinite"/>
+      </line>
+      <circle r="2" fill="white" filter="url(#headGlow)">
+        <animate attributeName="cx" values="150;350" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="50;700" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Star 2 - Center-right (starts at 10s) -->
+    <g>
+      <line stroke="url(#tailGradient)" stroke-width="2">
+        <animate attributeName="x1" values="350;550" dur="8s" begin="10s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="-50;600" dur="8s" begin="10s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="450;650" dur="8s" begin="10s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="50;700" dur="8s" begin="10s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="8s" begin="10s" repeatCount="indefinite"/>
+      </line>
+      <circle r="2" fill="white" filter="url(#headGlow)">
+        <animate attributeName="cx" values="450;650" dur="8s" begin="10s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="50;700" dur="8s" begin="10s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="8s" begin="10s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Star 3 - Far right (starts at 20s) -->
+    <g>
+      <line stroke="url(#tailGradient)" stroke-width="2">
+        <animate attributeName="x1" values="500;700" dur="8s" begin="20s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="-50;600" dur="8s" begin="20s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="600;800" dur="8s" begin="20s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="50;700" dur="8s" begin="20s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="8s" begin="20s" repeatCount="indefinite"/>
+      </line>
+      <circle r="2" fill="white" filter="url(#headGlow)">
+        <animate attributeName="cx" values="600;800" dur="8s" begin="20s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="50;700" dur="8s" begin="20s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="8s" begin="20s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- [Previous twinkling stars remain the same] -->
+</svg>

@@ -22,7 +22,7 @@ logos = {
         'javascript': 'https://cdn.svgporn.com/logos/javascript.svg',
         'python': 'https://cdn.svgporn.com/logos/python.svg',
         'dart': 'https://cdn.svgporn.com/logos/dart.svg',
-        'kotlin': 'https://cdn.svgporn.com/logos/kotlin.svg',
+        'kotlin': 'https://cdn.svgporn.com/logos/kotlin-icon.svg',
         'java': 'https://cdn.svgporn.com/logos/java.svg',
         'dart': 'https://cdn.svgporn.com/logos/dart.svg',
         'csharp': 'https://cdn.svgporn.com/logos/c-sharp.svg',
@@ -42,7 +42,7 @@ logos = {
         'svelte': 'https://cdn.svgporn.com/logos/svelte-icon.svg'
     },
     'backend': {
-        'fastapi': 'https://cdn.svgporn.com/logos/fastapi.svg',
+        'fastapi': 'https://cdn.svgporn.com/logos/fastapi-icon.svg',
         'supabase': 'https://cdn.svgporn.com/logos/supabase-icon.svg',
         'express': 'https://cdn.svgporn.com/logos/express.svg',
         'nodejs': 'https://cdn.svgporn.com/logos/nodejs-icon.svg',

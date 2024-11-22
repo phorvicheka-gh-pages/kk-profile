@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <!-- Enhanced background gradient -->
+    <radialGradient id="skyGradient" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#0c0c2f"/>
+      <stop offset="100%" style="stop-color:#000020"/>
+    </radialGradient>
+    
+    <!-- Super bright star glow -->
+    <filter id="superGlow">
+      <feGaussianBlur stdDeviation="3" result="glow1"/>
+      <feGaussianBlur stdDeviation="5" result="glow2"/>
+      <feMerge>
+        <feMergeNode in="glow2"/>
+        <feMergeNode in="glow1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Medium star glow -->
+    <filter id="mediumGlow">
+      <feGaussianBlur stdDeviation="2" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#skyGradient)"/>
+  
+  <!-- Small background stars -->
+  <g opacity="0.7">
+    <!-- Layer 1 tiny stars -->
+    <circle cx="50" cy="50" r="0.5" fill="#ffffff"/>
+    <circle cx="120" cy="80" r="0.5" fill="#ffffff"/>
+    <circle cx="200" cy="30" r="0.5" fill="#ffffff"/>
+    <circle cx="280" cy="90" r="0.5" fill="#ffffff"/>
+    <circle cx="350" cy="40" r="0.5" fill="#ffffff"/>
+    <circle cx="420" cy="70" r="0.5" fill="#ffffff"/>
+    <circle cx="500" cy="45" r="0.5" fill="#ffffff"/>
+    <circle cx="580" cy="85" r="0.5" fill="#ffffff"/>
+    <circle cx="650" cy="35" r="0.5" fill="#ffffff"/>
+    <circle cx="720" cy="75" r="0.5" fill="#ffffff"/>
+    <!-- Add many more small stars at different positions -->
+  </g>
+
+  <!-- Medium stars with glow -->
+  <g filter="url(#mediumGlow)">
+    <circle cx="100" cy="150" r="1.5" fill="#ffffff"/>
+    <circle cx="250" cy="200" r="1.8" fill="#ffffff"/>
+    <circle cx="400" cy="150" r="1.6" fill="#ffffff"/>
+    <circle cx="550" cy="250" r="1.7" fill="#ffffff"/>
+    <circle cx="700" cy="180" r="1.5" fill="#ffffff"/>
+    <circle cx="150" cy="400" r="1.6" fill="#ffffff"/>
+    <circle cx="300" cy="350" r="1.8" fill="#ffffff"/>
+    <circle cx="450" cy="450" r="1.5" fill="#ffffff"/>
+    <circle cx="600" cy="380" r="1.7" fill="#ffffff"/>
+    <circle cx="750" cy="420" r="1.6" fill="#ffffff"/>
+    <!-- Add more medium stars -->
+  </g>
+
+  <!-- Bright stars with super glow -->
+  <g filter="url(#superGlow)">
+    <circle cx="150" cy="100" r="3" fill="#ffffff"/>
+    <circle cx="650" cy="150" r="3.5" fill="#ffffff"/>
+    <circle cx="400" cy="280" r="4" fill="#ffffff"/>
+    <circle cx="200" cy="400" r="3.2" fill="#ffffff"/>
+    <circle cx="700" cy="380" r="3.8" fill="#ffffff"/>
+    <circle cx="300" cy="200" r="3.5" fill="#ffffff"/>
+    <circle cx="550" cy="450" r="3.3" fill="#ffffff"/>
+    <circle cx="480" cy="120" r="3.6" fill="#ffffff"/>
+    <circle cx="120" cy="320" r="3.4" fill="#ffffff"/>
+    <circle cx="750" cy="250" r="3.7" fill="#ffffff"/>
+  </g>
+
+  <!-- Twinkling stars -->
+  <g>
+    <animate 
+      attributeName="opacity"
+      values="0.4;1;0.4"
+      dur="2s"
+      repeatCount="indefinite"/>
+    <circle cx="280" cy="120" r="2" fill="#ffffff"/>
+    <circle cx="420" cy="220" r="2.2" fill="#ffffff"/>
+    <circle cx="560" cy="180" r="2" fill="#ffffff"/>
+    <circle cx="180" cy="350" r="2.1" fill="#ffffff"/>
+    <circle cx="640" cy="280" r="2" fill="#ffffff"/>
+  </g>
+</svg>
